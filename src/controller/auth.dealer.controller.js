@@ -17,4 +17,40 @@ export const register = async (req, res) => {
         res.status(500).json({ message: "Error interno del servidor" });
     }
 }
+
+//editar telefono y correo
+export const update = async (req, res) => {
+    try {
+        const { idDealer, telefono, correo } = req.body;
+        await dealer.updateOne({ idDealer }, { telefono, correo });
+        res.status(201).json({ message: "Dealer actualizado con éxito" });
+    } catch (error) {
+        console.error("Error al actualizar el dealer:", error);
+        res.status(500).json({ message: "Error interno del servidor" });
+    }
+}
+
+//agregar un fecha de creacion  
+export const addFechaCreacion = async (req, res) => {
+    try {
+        const { idDealer, fechaCreacion } = req.body;
+        await dealer.updateOne({ idDealer }, { fechaCreacion });
+        res.status(201).json({ message: "Fecha de creación agregada con éxito" });
+    } catch (error) {
+        console.error("Error al agregar la fecha de creación:", error);
+        res.status(500).json({ message: "Error interno del servidor" });
+    }
+}
+
+//consultar todos los dealers
+export const getDealers = async (req, res) => {
+    try {
+        const dealers = await dealer.find();
+        res.json(dealers);
+    } catch (error) {
+        console.error("Error al obtener los dealers:", error);
+        res.status(500).json({ message: "Error interno del servidor" });
+    }
+}
+
 export const login = (_, res) => res.send("dealer login");

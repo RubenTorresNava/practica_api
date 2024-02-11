@@ -17,4 +17,41 @@ export const register = async (req, res) => {
         res.status(500).json({ message: "Error interno del servidor" });
     }
 };
+
+//consultar todos los productos
+export const getProducts = async (req, res) => {
+    try {
+        const products = await product.find();
+        res.json(products);
+    } catch (error) {
+        console.error("Error al obtener los productos:", error);
+        res.status(500).json({ message: "Error interno del servidor" });
+    }
+}
+
+
+//agregar un fecha de creacion
+export const addFechaCreacion = async (req, res) => {
+    try {
+        const { codigo, fechaCreacion } = req.body;
+        await product.updateOne({ codigo }, { fechaCreacion });
+        res.status(201).json({ message: "Fecha de creación agregada con éxito" });
+    } catch (error) {
+        console.error("Error al agregar la fecha de creación:", error);
+        res.status(500).json({ message: "Error interno del servidor" });
+    }
+}
+
+//editar descripcion
+export const update = async (req, res) => {
+    try {
+        const { codigo, descripcion } = req.body;
+        await product.updateOne({ codigo }, { descripcion });
+        res.status(201).json({ message: "Producto actualizado con éxito" });
+    } catch (error) {
+        console.error("Error al actualizar el producto:", error);
+        res.status(500).json({ message: "Error interno del servidor" });
+    }
+}
+
 export const login = (_, res) => res.send("product login");
