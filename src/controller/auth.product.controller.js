@@ -42,11 +42,11 @@ export const addFechaCreacion = async (req, res) => {
     }
 }
 
-//editar descripcion
+//editar descripcion y nombre
 export const update = async (req, res) => {
     try {
-        const { codigo, descripcion } = req.body;
-        await product.updateOne({ codigo }, { descripcion });
+        const { codigo, descripcion, nombre } = req.body;
+        await product.updateOne({ codigo }, { descripcion, nombre });
         res.status(201).json({ message: "Producto actualizado con éxito" });
     } catch (error) {
         console.error("Error al actualizar el producto:", error);
