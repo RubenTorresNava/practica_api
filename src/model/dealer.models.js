@@ -32,5 +32,12 @@ const dealerSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    fechaEliminacion:{
+        type: String,
+    },
+    estatus: {
+        type: Boolean,
+        required: true
+    }
 });
 export default mongoose.model('Dealer', dealerSchema);

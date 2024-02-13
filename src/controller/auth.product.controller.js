@@ -54,4 +54,16 @@ export const update = async (req, res) => {
     }
 }
 
+//eliminar un producto estableciendo el estatus en false y no eliminando el registro generando estableciendo la fecha de eliminacion
+export const deleteProduct = async (req, res) => {
+    try {
+        const { codigo, fechaEliminacion } = req.body;
+        await product.updateOne({ codigo }, { estatus: false, fechaEliminacion });
+        res.status(201).json({ message: "Producto eliminado con éxito" });
+    } catch (error) {
+        console.error("Error al eliminar el producto:", error);
+        res.status(500).json({ message: "Error interno del servidor" });
+    }
+}
+
 export const login = (_, res) => res.send("product login");
