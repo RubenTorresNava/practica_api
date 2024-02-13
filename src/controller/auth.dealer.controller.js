@@ -53,4 +53,21 @@ export const getDealers = async (req, res) => {
     }
 }
 
+//eliminar un dealer estableciendo el estatus en false y no eliminando el registro generando estableciendo la fecha de eliminacion y comprobar si existe el dealer
+export const deleteDealer = async (req, res) => {
+    try {
+        const { idDealer, fechaEliminacion } = req.body;
+        const dealerExist = await dealer.findOne({ idDealer });
+        if (dealerExist) {
+            await dealer.updateOne({ idDealer }, { fechaEliminacion , estatus: false });
+            res.status(201).json({ message: "Dealer eliminado con éxito" });
+        } else {
+            res.status(404).json({ message: "Dealer no encontrado" });
+        }
+    } catch (error) {
+        console.error("Error al eliminar el dealer:", error);
+        res.status(500).json({ message: "Error interno del servidor" });
+    }
+}
+
 export const login = (_, res) => res.send("dealer login");
