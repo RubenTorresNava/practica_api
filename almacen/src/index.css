@@ -6,3 +6,53 @@ body{
     background-color: black;
     color: white;
 }
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: #333;
+    color: white;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+    font-family: 'Courier New', Courier, monospace;
+}
+.formulario form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.formulario input{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: white;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+    font-family: 'Courier New', Courier, monospace;
+}
+.formulario button{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+.formulario button:hover{
+    background-color: #45a049;
+}
+h1{
+    text-align: center;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+}
