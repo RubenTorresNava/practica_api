@@ -1,5 +1,5 @@
 // app.js
-
+import corse from "cors";
 import express from "express";
 import morgan from "morgan";
 import authRoute from "./routes/auth.route.js";
@@ -7,7 +7,7 @@ import authDealerRoute from "./routes/auth.dealer.route.js";
 import authProductRoute from "./routes/auth.product.route.js";
 
 const app = express();
-
+app.use(corse());
 app.use(morgan("dev"));
 app.use(express.json());
 
