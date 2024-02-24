@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body{
-    background-color: black;
+    background-color: rgb(95, 91, 91);
     color: white;
 }
 .formulario{
@@ -53,7 +53,7 @@ body{
 }
 h1{
     text-align: center;
-    font-size: large;
+    font-size: 32px;
     font-family: 'Courier New', Courier, monospace;
 }
 .navegar{
@@ -71,4 +71,65 @@ h1{
     margin-right: 25%;
     box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
     font-family: 'Courier New', Courier, monospace;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: #333;
+    color: white;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+    font-family: 'Courier New', Courier, monospace;
+}
+.login form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.login input{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: white;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+    font-family: 'Courier New', Courier, monospace;
+}
+.login button{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+.login button:hover{
+    background-color: #45a049;
+}
+.regresar{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #494646;
+    color: white;
+    cursor: pointer;
+}
+.regresar:hover{
+    background-color: #3f3f3f;
+}
+a{
+    text-decoration: none;
+    color: white;
 }

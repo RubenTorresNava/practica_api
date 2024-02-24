@@ -8,6 +8,7 @@ function Home() {
       <h1>Bienvenido</h1>
       <Link className="navegar" to="/login">Iniciar sesion</Link>
       <Link className="navegar" to="/register">Registrar un Usuario</Link>
+      <Link className="navegar" to="/insertproduct">Registrar un producto</Link>
     </div>
   );
 }

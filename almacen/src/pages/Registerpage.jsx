@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { regis } from '/api/Auth';
+import { Link } from "react-router-dom";
 function Registerpage() {
   const { register, handleSubmit } = useForm();
 
@@ -57,6 +58,7 @@ function Registerpage() {
         />
         <button type="submit">Registrarse</button>
       </form>
+      <Link className="regresar" to="/">Inicio</Link>
     </div>
   );
 }
