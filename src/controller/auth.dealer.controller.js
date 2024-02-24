@@ -1,7 +1,7 @@
 import dealer from '../model/dealer.models.js';
 export const register = async (req, res) => {
     try {
-        const { idDealer, nombre, apellido, telefono, empresa, correo } = req.body;
+        const { idDealer, nombre, apellido, telefono, empresa, correo, fechaCreacion, estatus } = req.body;
         const nuevoDealer = new dealer({
             idDealer,
             nombre,
@@ -9,6 +9,8 @@ export const register = async (req, res) => {
             telefono,
             empresa,
             correo,
+            fechaCreacion,
+            estatus
         });
         await nuevoDealer.save();
         res.status(201).json({ message: "Dealer registrado con éxito" });

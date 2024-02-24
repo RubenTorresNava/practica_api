@@ -27,10 +27,7 @@ const dealerSchema = new mongoose.Schema({
         required: true,
     },
     fechaCreacion: {
-        //las fechas se almacenan en el formato de fecha de JavaScript, que es un
-        //formato de fecha y hora ISO 8601. Este formato se ve así: YYYY-MM-DDTHH:MM:SS.SSSZ.
-        type: Date,
-        default: Date.now,
+        type: String,
     },
     fechaEliminacion:{
         type: String,
